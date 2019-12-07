@@ -1,0 +1,88 @@
+{% load staticfiles %}
+<html>
+<head>
+    <title>Base File</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
+    <script type="text/javascript" src="{% static 'js/lightbox-plus-jquery.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/team.css' %}">
+
+
+
+</head>
+<style>
+    #name1{
+            font-size: 20px;
+            text-shadow: 2px 2px blue;
+             color: red;
+             font-family: Calibri;
+    }
+    #hello{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+    #h1{
+        float: left;
+    }
+    #h1 a{
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 20px 30px;
+        font-size: 20px;
+        text-decoration: none;
+    }
+    .active{
+        background-color: green;
+    }
+    #h1 a:hover{
+        background-color:orange;
+        color: black;
+
+    }
+    .footer{
+        text-align: center;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: black;
+        color: white;
+    }
+    #h11{
+        font-size: 50px;
+        text-shadow: 3px 3px 3px red;
+        margin-top: -5px;
+    }
+
+</style>
+
+<body>
+<ul id="hello">
+    <li id="h1"><a href="/home/" class="active">Home</a></li>
+    <li id="h1"><a href="/contact/">Contact</a></li>
+    <li id="h1"><a href="/course/">Courses</a></li>
+    <li id="h1"><a href="/gallary/">Gallery</a></li>
+    <li id="h1"><a href="/feedback/">Feedback</a></li>
+    <li id="h1"><a href="/ourteam/">Ourteam</a></li>
+
+</ul>
+<marquee>
+<h1 id="h11">Welcome Srinath</h1></marquee>>
+{% block content %}
+{% endblock %}
+
+<footer class="footer" >
+    <h3>Thank you All</h3>
+
+</footer>
+</body>
+</html>

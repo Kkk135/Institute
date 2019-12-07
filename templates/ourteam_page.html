@@ -1,0 +1,45 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+<html>
+<head>
+    <title>Ourteam Page</title>
+</head>
+<body>
+{% block content %}
+
+    <div class="team">
+        <h1> Our Team </h1>
+        <span class="sp1"></span>
+        <div class="pics"></div>
+            <a href="#p1"><img src="{% static 'images/download.jfif' %}"></a>
+            <a href="#p2"><img src="{% static 'images/download.jfif' %}"></a>
+            <a href="#p3"><img src="{% static 'images/download.jfif' %}"></a>
+
+
+
+        <div class="section" id="p1">
+            <h1 class="name">Narayana</h1>
+            <span class="sp1"></span>
+            <center><p>python narayana narayana narayana</p></center>
+        </div>
+
+        <div class="section" id="p2">
+            <h1 class="name">Srinu</h1>
+            <span class="sp1"></span>
+            <center><p>Rest api narayana narayana narayana</p></center>
+        </div>
+
+        <div class="section" id="p3">
+            <h1 class="name">Sathya</h1>
+            <span class="sp1"></span>
+            <center><p>Django Django Django narayana narayana narayana</p></center>
+        </div>
+        </div>
+
+    </div>
+{% endblock %}
+</body>
+</html>

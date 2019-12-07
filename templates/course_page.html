@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+<html>
+<head>
+    <title>course page</title>
+</head>
+<body>
+{% block content %}
+    <style>
+    table{
+        width: 100%;
+        text-align: center;
+    }
+    td,th{
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+    tbody:nth-of-type(odd){
+        background-color: aqua;
+        color: white;
+
+    }
+     tbody:nth-of-type(even){
+        background-color:orangered;
+        color: white;
+     }
+    thead{
+        background-color: chartreuse;
+        color: white;
+    }
+    body{
+        background-color: darkorchid;
+    }
+
+    </style>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {% if courses %}
+                     <center><h1>Available courses are ....</h1></center>
+                 <table border="2px solid red">
+                 <thead>
+                    <tr>
+                        <th>course id</th>
+                        <th>course name</th>
+                        <th>course dur</th>
+                        <th>course fee</th>
+                        <th>start date</th>
+                        <th>start time</th>
+                        <th>trainer name</th>
+                        <th>trainer exp</th>
+                    </tr>
+                </thead>
+                    {% for i in courses %}
+                     <tbody>
+                        <tr>
+                            <td>{{ i.course_id }}</td>
+                            <td>{{ i.course_name }}</td>
+                            <td>{{ i.course_dur }}</td>
+                            <td>{{ i.course_fee }}</td>
+                            <td>{{ i.start_date }}</td>
+                            <td>{{ i.start_time }}</td>
+                            <td>{{ i.trainer_name }}</td>
+                            <td>{{ i.trainer_exp }}</td>
+
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
+        {% else %}
+                    <h1>No courses are available</h1>
+                {% endif %}
+        </div>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>

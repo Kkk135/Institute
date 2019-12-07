@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+<html>
+<head>
+    <title>contact page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+{% block content %}
+    <div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            {% if fdata %}
+                <h2>Your Feedback are</h2>
+            {% endif %}
+            {% if fdata %}
+                 {% for i in fdata %}
+                     {% if i.rating >= 6 and i.rating <= 10 %}
+                          <h3 id="name1"> Name {{ i.name }}</h3><br>
+                            Rating {{ i.rating }}<br>
+                            Date {{ i.date}}<br>
+                            Feedback{{ i.feedback }}<br><br>
+                    {% endif %}
+                 {% endfor %}
+            {% else %}
+                <h2>No feedback are available</h2>
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <h3>please enter your feedback</h3>
+                {{ fform }}<br>
+                <center>
+                    <input type="submit" value="send" class="btn btn-success">
+                    <input type="reset" value="clear" class="btn btn-danger">
+                </center>
+            </form>
+        </div>
+    </div>
+    </div>
+{% endblock %}
+</body>
+</html>
